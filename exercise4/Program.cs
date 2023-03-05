@@ -1,12 +1,13 @@
 ﻿string Check_N(int N)
 {
-    int num1 = N / 10000;
-    int num2 = N / 1000;
-    int num3 = N % 100;
-    int num4 = num3 / 10;
-    int num5 = num3 % 10;
+    int num1 = N / 1000;
+    int num2 = num1 / 10;
+    int num3 = num1 % 10;
+    int num4 = N % 100;
+    int num5 = num4 / 10;
+    int num6 = num4 % 10;
     string res = "Введены некоректные данные";
-    if (num1 == num5 & num2 == num4)
+    if (num2 == num6 & num3 == num5)
         Console.WriteLine("Число " + N + " является палиндромом");
     else
         Console.WriteLine("Число " + N + " не является палиндромом");
