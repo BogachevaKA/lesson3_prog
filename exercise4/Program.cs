@@ -1,27 +1,29 @@
-﻿
+﻿//Задача 19. Напишите программу, которая принимает на вход пятизначное число и проверяет, 
+//является ли оно палиндромом. Через строку решать нельзя.
+//14212 -> нет
+//12821 -> да
+//23432 -> да
+
 void CheckPalindromicNumber(int number)
 {
     if (number >= 10000 && number < 100000)
     {
-        int division1 = number / 10000;
-        int remainder1 = number % 10;
-
-        if (division1 == remainder1)
+        int div1 = number / 10000;
+        int rem1 = number % 10;
+        if (div1 == rem1)
         {
             number = number / 10;
-            int division2 = (number / 100) % 10;
-            int remainder2 = number % 10;
-            if (division2 == remainder2)
-                Console.WriteLine("Да");
+            int div2 = (number / 100) % 10;
+            int rem2 = number % 10;
+            if (div2 == rem2)
+                Console.WriteLine("Число является палиндромом");
         }
         else
-            Console.WriteLine("Нет");
-
+            Console.WriteLine("Число не палиндром");
     }
     else
-        Console.WriteLine("Некорректное число!");
+        Console.WriteLine("Число введено не корректно");
 }
-
 Console.WriteLine("Введите пятизначное число:");
 int number = int.Parse(Console.ReadLine()!);
 CheckPalindromicNumber(number);
